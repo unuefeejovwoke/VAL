@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Be my Val</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <div class="container">  
+      <div class="valentines">
+        <div class="envelope"></div>
+        <div class="front"></div>
+        <div class="card">
+          <div class="text">Happy</br> Valentine's</br> Day!</div>
+          <div class="heart"</div>
+        </div>
+        <div class="hearts">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="four"></div>
+          <div class="five"></div>
+        </div>
+      </div>
+    </div>
+    <div class="shadow"></div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <p>Would you be my val?</p>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $('.container').mouseenter(function () {
+        $('.card').stop().animate({
+          top: '-130px'
+        }, 'slow', function() {
+          // Animation complete, show popup
+          $('#popup').fadeIn();
+        });
+      }).mouseleave(function () {
+        $('.card').stop().animate({
+          top: 0
+        }, 'slow');
+      });
+
+      // Handling button clicks
+      $('#yes').click(function() {
+        alert("Great! Happy Valentine's Day!");
+        // You can perform further actions here
+      });
+
+      $('#no').click(function() {
+        alert("Oh, okay. Have a good day!");
+        // You can perform further actions here
+      });
+    });
+  </script>
+</html>
